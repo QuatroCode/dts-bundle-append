@@ -21,7 +21,7 @@ Also, you can specify a custom config file (see [#command-line](#command-line)).
 |--------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | appends      | `string | Array<string>`       | Specifies a list of glob patterns that match `d.ts` files to be appended in bundled `d.ts` file. Read more about [globs](https://github.com/isaacs/node-glob#glob-primer). |
 
-*All other configuration options available from `dts-bundle.json` (read more [TypeStrong/dts-bundle#options](https://github.com/TypeStrong/dts-bundle#options)).
+*All other configuration options available from `dts-bundle` (read more [TypeStrong/dts-bundle#options](https://github.com/TypeStrong/dts-bundle#options)).
 
 
 ### Configuration example
