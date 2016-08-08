@@ -6,8 +6,8 @@ exports.default = yargs
     .version(() => {
     return `Current version: ${require('../package.json').version}`;
 })
-    .option('appends', {
-    describe: 'Appends files to global',
+    .option('append', {
+    describe: 'Append files to global',
     type: "string"
 })
     .option("out", {
@@ -23,5 +23,5 @@ exports.default = yargs
     describe: "dts-bundle base directory",
     type: "string"
 })
-    .usage('Usage: dts-bundle-appends [options]')
+    .usage('Usage: dts-bundle-append [options]')
     .argv;

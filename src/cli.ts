@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 import Arguments, { ArgOptions } from './arguments';
-import Appends from './appends';
+import Append from './append';
 import * as fs from 'fs';
 import * as path from 'path';
 
 interface DtsBundleAppendOptions extends DtsBundleOptions {
-    appends: string | Array<string>;
+    append: string | Array<string>;
 }
 
 export interface DtsBundleOptions {
@@ -38,25 +38,25 @@ class Cli {
     private async startCli(argv: ArgOptions) {
         let argvCheck = await this.checkArguments(argv);
         if (argvCheck.valid) {
-            let appends: string | Array<string>,
+            let append: string | Array<string>,
                 out: string,
                 baseDir: string;
-            if (argv.appends != null && argv.out != null && argv.out.length > 0 && argv.baseDir != null && argv.baseDir.length > 0) {
+            if (argv.append != null && argv.out != null && argv.out.length > 0 && argv.baseDir != null && argv.baseDir.length > 0) {
                 out = argv.out;
-                appends = argv.appends;
+                append = argv.append;
                 baseDir = argv.baseDir || undefined;
             } else {
                 let dtsConfig = await this.readDtsBundleConfig(argv.configJson);
                 out = argv.out || dtsConfig.out || this.addDTsExtension(dtsConfig.name);
-                appends = argv.appends || dtsConfig.appends;
+                append = argv.append || dtsConfig.append;
                 baseDir = argv.baseDir || dtsConfig.baseDir || undefined;
             }
 
-            if (this.checkGeneratedArguments(appends, out)) {
+            if (this.checkGeneratedArguments(append, out)) {
                 if (baseDir !== undefined) {
                     out = path.join(baseDir, out);
                 }
-                new Appends(appends, out);
+                new Append(append, out);
             }
         } else {
             this.throwError("[ERROR] " + argvCheck.errorMessage);
@@ -70,9 +70,9 @@ class Cli {
         return undefined;
     }
 
-    private checkGeneratedArguments(appends: string | Array<string>, out: string) {
-        if (appends == null) {
-            this.throwError("[ERROR] Appends files list not specified");
+    private checkGeneratedArguments(append: string | Array<string>, out: string) {
+        if (append == null) {
+            this.throwError("[ERROR] Append files list not specified");
         }
         if (out == null) {
             this.throwError("[ERROR] Out file not specified");
@@ -82,7 +82,7 @@ class Cli {
 
     private async checkArguments(argv: ArgOptions) {
         return new Promise<{ valid: boolean, errorMessage?: string }>(resolve => {
-            if (argv.appends != null && argv.appends.length <= 0) {
+            if (argv.append != null && argv.append.length <= 0) {
                 resolve({ valid: false, errorMessage: `Invalid argument 'append'` });
                 return;
             }

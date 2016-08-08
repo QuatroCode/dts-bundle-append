@@ -1,7 +1,7 @@
 import * as yargs from 'yargs';
 
 export interface ArgOptions {
-    appends?: string;
+    append?: string;
     out?: string;
     configJson?: string;
     baseDir?: string;
@@ -12,8 +12,8 @@ export default yargs
     .version(() => {
         return `Current version: ${require('../package.json').version}`;
     })
-    .option('appends', {
-        describe: 'Appends files to global',
+    .option('append', {
+        describe: 'Append files to global',
         type: "string"
     })
     .option("out", {
@@ -29,5 +29,5 @@ export default yargs
         describe: "dts-bundle base directory",
         type: "string"
     })
-    .usage('Usage: dts-bundle-appends [options]')
+    .usage('Usage: dts-bundle-append [options]')
     .argv;

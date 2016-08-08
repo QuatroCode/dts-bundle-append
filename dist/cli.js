@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const arguments_1 = require('./arguments');
-const appends_1 = require('./appends');
+const append_1 = require('./append');
 const fs = require('fs');
 const path = require('path');
 class Cli {
@@ -20,23 +20,23 @@ class Cli {
         return __awaiter(this, void 0, void 0, function* () {
             let argvCheck = yield this.checkArguments(argv);
             if (argvCheck.valid) {
-                let appends, out, baseDir;
-                if (argv.appends != null && argv.out != null && argv.out.length > 0 && argv.baseDir != null && argv.baseDir.length > 0) {
+                let append, out, baseDir;
+                if (argv.append != null && argv.out != null && argv.out.length > 0 && argv.baseDir != null && argv.baseDir.length > 0) {
                     out = argv.out;
-                    appends = argv.appends;
+                    append = argv.append;
                     baseDir = argv.baseDir || undefined;
                 }
                 else {
                     let dtsConfig = yield this.readDtsBundleConfig(argv.configJson);
                     out = argv.out || dtsConfig.out || this.addDTsExtension(dtsConfig.name);
-                    appends = argv.appends || dtsConfig.appends;
+                    append = argv.append || dtsConfig.append;
                     baseDir = argv.baseDir || dtsConfig.baseDir || undefined;
                 }
-                if (this.checkGeneratedArguments(appends, out)) {
+                if (this.checkGeneratedArguments(append, out)) {
                     if (baseDir !== undefined) {
                         out = path.join(baseDir, out);
                     }
-                    new appends_1.default(appends, out);
+                    new append_1.default(append, out);
                 }
             }
             else {
@@ -50,9 +50,9 @@ class Cli {
         }
         return undefined;
     }
-    checkGeneratedArguments(appends, out) {
-        if (appends == null) {
-            this.throwError("[ERROR] Appends files list not specified");
+    checkGeneratedArguments(append, out) {
+        if (append == null) {
+            this.throwError("[ERROR] Append files list not specified");
         }
         if (out == null) {
             this.throwError("[ERROR] Out file not specified");
@@ -62,7 +62,7 @@ class Cli {
     checkArguments(argv) {
         return __awaiter(this, void 0, void 0, function* () {
             return new Promise(resolve => {
-                if (argv.appends != null && argv.appends.length <= 0) {
+                if (argv.append != null && argv.append.length <= 0) {
                     resolve({ valid: false, errorMessage: `Invalid argument 'append'` });
                     return;
                 }

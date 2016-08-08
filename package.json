@@ -1,7 +1,7 @@
 {
-  "name": "dts-bundle-appends",
+  "name": "dts-bundle-append",
   "version": "0.0.2",
-  "description": "Appends custom d.ts files into d.ts file bundle by dts-bundle.",
+  "description": "Append custom d.ts files into d.ts file bundle by dts-bundle.",
   "keywrods": [
     "dts-bundle",
     "typescript",
@@ -11,16 +11,16 @@
     "bundle",
     "d.ts"
   ],
-  "main": "dist/appends.js",
+  "main": "dist/append.js",
   "scripts": {
     "build": "tsc -p .",
     "watch": "tsc -p . -w",
     "prepublish": "npm run build"
   },
   "author": "Giedrius Grabauskas <giedrius@quatrodev.com> (https://github.com/GiedriusGrabauskas)",
-  "bugs": "https://github.com/QuatroCode/dts-bundle-appends/issues",
-  "repository": "QuatroCode/dts-bundle-appends",
-  "homepage": "https://github.com/QuatroCode/dts-bundle-appends",
+  "bugs": "https://github.com/QuatroCode/dts-bundle-append/issues",
+  "repository": "QuatroCode/dts-bundle-append",
+  "homepage": "https://github.com/QuatroCode/dts-bundle-append",
   "license": "GPL-3.0",
   "files": [
     "dist",
@@ -28,7 +28,7 @@
     "LICENSE"
   ],
   "bin": {
-    "dts-bundle-appends": "./dist/cli.js"
+    "dts-bundle-append": "./dist/cli.js"
   },
   "devDependencies": {
     "@types/yargs": "0.0.28",

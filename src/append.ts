@@ -4,20 +4,20 @@ import * as path from 'path';
 
 const EOL = "\r\n";
 
-interface AppendsFilesResult {
+interface AppendFilesResult {
     Total: number;
     Success: number;
     Failed: number;
 }
 
-export default class Appends {
+export default class Append {
 
-    constructor(appends: string | Array<string>, out: string) {
-        this.main(appends, out);
+    constructor(append: string | Array<string>, out: string) {
+        this.main(append, out);
     }
 
-    private async main(appends: string | Array<string>, out: string) {
-        let globPattern = this.generateAppendGlobPattern(appends);
+    private async main(append: string | Array<string>, out: string) {
+        let globPattern = this.generateAppendGlobPattern(append);
         let filesList = await this.getFilesListByGlobPattern(globPattern);
         filesList = this.filterOnlyDTsFiles(filesList);
         if (filesList.length === 0) {
@@ -42,7 +42,7 @@ export default class Appends {
     }
 
     private async appendFiles(files: Array<string>, outStream: fs.WriteStream) {
-        return new Promise<AppendsFilesResult>(resolve => {
+        return new Promise<AppendFilesResult>(resolve => {
             let counter = 0,
                 success = 0;
             files.forEach(async file => {
@@ -103,13 +103,13 @@ export default class Appends {
         });
     }
 
-    private generateAppendGlobPattern(appends: string | Array<string>) {
-        if (typeof appends === "string") {
-            return appends;
-        } else if (appends.length === 1) {
-            return appends[0];
+    private generateAppendGlobPattern(append: string | Array<string>) {
+        if (typeof append === "string") {
+            return append;
+        } else if (append.length === 1) {
+            return append[0];
         } else {
-            return `+(${appends.join("|")})`;
+            return `+(${append.join("|")})`;
         }
     }
 
