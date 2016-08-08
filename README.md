@@ -9,7 +9,9 @@ npm install dts-bundle-appends
 2) Run `dts-bundle`.
 
 3) After `d.ts` file bundled, run `dts-bundle-appends`.
- 
+
+## Requirements
+[NodeJS](https://nodejs.org/): >= 6.0.0 
 
 ## Configuration
 Default configuration are taken from a `dts-bundle.json` file.
