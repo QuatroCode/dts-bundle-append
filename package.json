@@ -1,6 +1,6 @@
 {
   "name": "dts-bundle-appends",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Appends custom d.ts files into d.ts file bundle by dts-bundle.",
   "keywrods": [
     "dts-bundle",
