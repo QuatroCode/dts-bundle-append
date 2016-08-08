@@ -49,3 +49,6 @@ Options:
   --configJson  dts-bundle configuration file    [string] [default: "dts-bundle.json"]
   --baseDir     dts-bundle base directory                                     [string]
   ```
+
+## License
+[GPL-3.0](LICENSE)
