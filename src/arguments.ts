@@ -13,20 +13,20 @@ export default yargs
         return `Current version: ${require('../package.json').version}`;
     })
     .option('appends', {
-        describe: 'Appends files to global.',
+        describe: 'Appends files to global',
         type: "string"
     })
     .option("out", {
-        describe: "dts-bundle bundled out file.",
+        describe: "dts-bundle bundled out file",
         type: "string"
     })
     .option("configJson", {
-        describe: "dts-bundle configuration file.",
+        describe: "dts-bundle configuration file",
         default: "dts-bundle.json",
         type: "string"
     })
     .option("baseDir", {
-        describe: "dts-bundle base directory.",
+        describe: "dts-bundle base directory",
         type: "string"
     })
     .usage('Usage: dts-bundle-appends [options]')

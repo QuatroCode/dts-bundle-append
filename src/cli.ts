@@ -41,27 +41,33 @@ class Cli {
             let appends: string | Array<string>,
                 out: string,
                 baseDir: string;
-            if (argv.appends != null && argv.out != null && argv.out.length > 0) {
+            if (argv.appends != null && argv.out != null && argv.out.length > 0 && argv.baseDir != null && argv.baseDir.length > 0) {
                 out = argv.out;
                 appends = argv.appends;
                 baseDir = argv.baseDir || undefined;
             } else {
                 let dtsConfig = await this.readDtsBundleConfig(argv.configJson);
-                out = argv.out || dtsConfig.out || dtsConfig.name;
+                out = argv.out || dtsConfig.out || this.addDTsExtension(dtsConfig.name);
                 appends = argv.appends || dtsConfig.appends;
                 baseDir = argv.baseDir || dtsConfig.baseDir || undefined;
             }
 
-            if (baseDir !== undefined) {
-                out = path.join(baseDir, out);
-            }
-
             if (this.checkGeneratedArguments(appends, out)) {
+                if (baseDir !== undefined) {
+                    out = path.join(baseDir, out);
+                }
                 new Appends(appends, out);
             }
         } else {
             this.throwError("[ERROR] " + argvCheck.errorMessage);
         }
+    }
+
+    private addDTsExtension(name: string): string | undefined {
+        if (name != null) {
+            return `${name}.d.ts`;
+        }
+        return undefined;
     }
 
     private checkGeneratedArguments(appends: string | Array<string>, out: string) {
