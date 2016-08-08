@@ -43,8 +43,8 @@ Usage: dts-bundle-appends [options]
 Options:
   --help        Show help                                                    [boolean]
   --version     Show version number                                          [boolean]
-  --appends     Appends files to global.                                      [string]
-  --out         dts-bundle bundled out file.                                  [string]
-  --configJson  dts-bundle configuration file.   [string] [default: "dts-bundle.json"]
-  --baseDir     dts-bundle base directory.                                    [string]
+  --appends     Appends files to global                                       [string]
+  --out         dts-bundle bundled out file                                   [string]
+  --configJson  dts-bundle configuration file    [string] [default: "dts-bundle.json"]
+  --baseDir     dts-bundle base directory                                     [string]
   ```
