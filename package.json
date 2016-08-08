@@ -1,7 +1,7 @@
 {
   "name": "dts-bundle-appends",
   "version": "0.0.1",
-  "description": "Appends cutom definitions into bundled d.ts file.",
+  "description": "AAppends custom d.ts files into d.ts file bundle by dts-bundle.",
   "keywrods": [
     "dts-bundle",
     "typescript",
