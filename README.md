@@ -1,5 +1,5 @@
 # dts-bundle-appends
-Appends custom `d.ts` files into bundled `d.ts` file.
+Appends custom `d.ts` files into `d.ts` file bundled by [dts-bundle](https://github.com/TypeStrong/dts-bundle). 
 
 ## Usage
 1) Install from npm:
