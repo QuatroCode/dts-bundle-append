@@ -7,6 +7,7 @@ Appends custom `d.ts` files into bundled `d.ts` file.
 npm install dts-bundle-appends
 ```
 2) Run `dts-bundle`.
+
 3) After `d.ts` file bundled, run `dts-bundle-appends`.
  
 
