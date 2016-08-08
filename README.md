@@ -1,4 +1,4 @@
-# dts-bundle-appends [![NPM version](http://img.shields.io/npm/v/dts-bundle-appends.svg)](https://www.npmjs.com/package/dts-bundle-appends)
+# dts-bundle-appends [![NPM version](http://img.shields.io/npm/v/dts-bundle-appends.svg)](https://www.npmjs.com/package/dts-bundle-appends) [![dependencies Status](https://david-dm.org/quatrocode/dts-bundle-appends/status.svg)](https://david-dm.org/quatrocode/dts-bundle-appends) [![devDependencies Status](https://david-dm.org/quatrocode/dts-bundle-appends/dev-status.svg)](https://david-dm.org/quatrocode/dts-bundle-appends?type=dev)
 Appends custom `d.ts` files into one `d.ts` file bundled by [dts-bundle](https://github.com/TypeStrong/dts-bundle). 
 
 ## Usage
