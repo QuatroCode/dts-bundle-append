@@ -1,0 +1,43 @@
+{
+  "name": "dts-bundle-appends",
+  "version": "0.0.1",
+  "description": "Appends cutom definitions into bundled d.ts file.",
+  "keywrods": [
+    "dts-bundle",
+    "typescript",
+    "types",
+    "definitelyTyped",
+    "append",
+    "bundle",
+    "d.ts"
+  ],
+  "main": "dist/appends.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "watch": "tsc -p . -w",
+    "prepublish": "npm run build"
+  },
+  "author": "Giedrius Grabauskas <giedrius@quatrodev.com> (https://github.com/GiedriusGrabauskas)",
+  "bugs": "https://github.com/QuatroCode/dts-bundle-appends/issues",
+  "repository": "QuatroCode/dts-bundle-appends",
+  "homepage": "https://github.com/QuatroCode/dts-bundle-appends",
+  "license": "GPL-3.0",
+  "files": [
+    "dist",
+    "*.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "dts-bundle-appends": "./dist/cli.js"
+  },
+  "devDependencies": {
+    "@types/yargs": "0.0.28",
+    "@types/glob": "^5.0.29",
+    "@types/node": "^6.0.31",
+    "typescript": "^2.0.0"
+  },
+  "dependencies": {
+    "glob": "^7.0.5",
+    "yargs": "^4.8.1"
+  }
+}
