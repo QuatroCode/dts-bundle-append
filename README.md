@@ -1,4 +1,4 @@
-# dts-bundle-appends
+# dts-bundle-appends [![NPM version](http://img.shields.io/npm/v/dts-bundle-appends.svg)](https://www.npmjs.com/package/dts-bundle-appends)
 Appends custom `d.ts` files into one `d.ts` file bundled by [dts-bundle](https://github.com/TypeStrong/dts-bundle). 
 
 ## Usage
